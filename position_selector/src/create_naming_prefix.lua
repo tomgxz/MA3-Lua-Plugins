@@ -3,13 +3,13 @@ local ti = TextInput
 
 function pos_create_name_prefix(DP)
     local macro_pool = ShowData().datapools[DP].Macros
-    local color_presets_pool = ShowData().datapools[DP].PresetPools[4]
+    local pos_presets_pool = ShowData().datapools[DP].PresetPools[4]
     local appearances_pool = ShowData().Appearances
     local matricks_pool = ShowData().DataPools[DP].MAtricks
     local groups_pool = ShowData().DataPools[DP].Groups
     local layouts_pool = ShowData().datapools[DP].Layouts
     local sequence_pool = ShowData().datapools[DP].Sequences
-    local pools = {macro_pool,color_presets_pool,appearances_pool,matricks_pool,layouts_pool,sequence_pool}
+    local pools = {macro_pool,pos_presets_pool,appearances_pool,matricks_pool,layouts_pool,sequence_pool}
     local prefix_index = 1
     local prefix = 'ColPicker_'..tostring(prefix_index)..'_'
     local obj_i = 1

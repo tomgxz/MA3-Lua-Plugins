@@ -7,21 +7,21 @@ function cp_declare_timing_values(half_second)
     local delays_to = {}
 
     fades[1] = 0
-    fades[2] = 0.25
-    fades[3] = 0.5
-    fades[4] = 1
+    fades[2] = 0.5
+    fades[3] = 1
+    fades[4] = 2
     fades[5] = '(Color Picker X Fade)'
     
     delays_from[1] = 0
-    delays_from[2] = 0.25
-    delays_from[3] = 0.5
-    delays_from[4] = 1
+    delays_from[2] = 0.5
+    delays_from[3] = 1
+    delays_from[4] = 2
     delays_from[5] = '(Color Picker X Delay-from)'
     
     delays_to[1] = 0
-    delays_to[2] = 0.25
-    delays_to[3] = 0.5
-    delays_to[4] = 1
+    delays_to[2] = 0.5
+    delays_to[3] = 1
+    delays_to[4] = 2
     delays_to[5] = '(Color Picker X Delay-to)'
 
         

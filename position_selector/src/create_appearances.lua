@@ -10,12 +10,12 @@ function pos_create_appearances(selected_presets, first_appear,in_declared_timin
     
     local fade_filenames_active
     local fade_filenames
-    local color_presets_for_appearances = selected_presets
+    local pos_presets_for_appearances = selected_presets
     local pos_preset_count = #selected_presets
 
-    local appearance_r = 1
-    local appearance_g = 1
-    local appearance_b = 1
+    local appearance_r = 127
+    local appearance_g = 127
+    local appearance_b = 127
 
 
     -------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ function pos_create_appearances(selected_presets, first_appear,in_declared_timin
         appearances[appear_num]:Set("backb", appearance_b)
         appearances[appear_num]:Set("imageb", appearance_b)
         appearances[appear_num]:Set("backalpha", 255)
-        appearances[appear_num]:Set("name",PosPresetPool[color_presets_for_appearances[i]].name)
+        appearances[appear_num]:Set("name",PosPresetPool[pos_presets_for_appearances[i]].name)
         appear_num = appear_num + 1
         progress = progress + 1
         SetProgress(progHandle, progress)
@@ -55,7 +55,7 @@ function pos_create_appearances(selected_presets, first_appear,in_declared_timin
     local i = 1
     while first_appear_mark <= last_appear do
         appearances[first_appear_mark]:Set('mediafilename','SYMBOL/symbols/x_mark_white.png')
-        appearances[first_appear_mark]:Set("name",PosPresetPool[color_presets_for_appearances[i]].name..' [active]')
+        appearances[first_appear_mark]:Set("name",PosPresetPool[pos_presets_for_appearances[i]].name..' [active]')
         first_appear_mark = first_appear_mark + 1
         progress = progress + 1
         i = i + 1
@@ -68,7 +68,7 @@ function pos_create_appearances(selected_presets, first_appear,in_declared_timin
     i = 1
     while first_appear_arrow <= last_appear do
         appearances[first_appear_arrow]:Set('mediafilename','SYMBOL/symbols/arrow_down.png')
-        appearances[first_appear_arrow]:Set("name",PosPresetPool[color_presets_for_appearances[i]].name..' [arrow]')
+        appearances[first_appear_arrow]:Set("name",PosPresetPool[pos_presets_for_appearances[i]].name..' [arrow]')
         appearances[first_appear_arrow]:Set("imager",0)
         appearances[first_appear_arrow]:Set("imageg",0)
         appearances[first_appear_arrow]:Set("imageb",0)

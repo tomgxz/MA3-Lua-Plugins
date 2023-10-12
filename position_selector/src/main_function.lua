@@ -24,14 +24,11 @@ local gl_first_macro
 local gl_first_symbol
 local gl_name_prefix
 
-local function color_picker_generator_main()
+local function pos_picker_generator_main()
     data_pool = tonumber(DataPool().no)
 
-    -- init color preset variables
+    -- init pos preset variables
     local pos_presets = {}
-    local presets_colors_R = {}
-    local presets_colors_G = {}
-    local presets_colors_B = {}
 
     -- get pools from ma3
     local macro_pool = ShowData().datapools[data_pool].Macros
@@ -138,7 +135,7 @@ local function color_picker_generator_main()
             SetProgress(progHandle, 3)
             coroutine.yield(gl_progress_bar_time)
 
-            -- create sequences with color values in
+            -- create sequences with pos values in
             create_pos_sequences(gl_first_sequence, groups_selected, gl_matricks_first, pos_presets,
                 gl_first_appear, gl_name_prefix, gl_progress_bar_time, data_pool)
 
@@ -217,4 +214,4 @@ local function color_picker_generator_main()
 
 end
 
-return color_picker_generator_main
+return pos_picker_generator_main

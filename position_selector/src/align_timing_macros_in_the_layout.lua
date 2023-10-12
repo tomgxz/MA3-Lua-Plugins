@@ -73,20 +73,20 @@ function pos_layout_align_timing_macros(last_obj, timing_macros_amount_lay,first
     local last_pool_obj = pool_obj_num + obj_count - 1 -- last object of the pool to be aligned
     local x_count = #fade_macros -- number of columns
     local last_layout_obj_num = obj_num + timing_macros_amount_lay - 1
-    local color_layout = pos_layout -- layout in the layout pool
+    local pos_layout = pos_layout -- layout in the layout pool
     local layout_pool = ShowData().datapools[DP].Layouts
     -- define the range of the progress bar:
 	SetProgressRange(progHandle, last_obj, last_layout_obj_num)
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
         while col_num <= x_count do
-            layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-            layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityobjectname',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityindicatorbar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilitybar',false)
-            layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-            layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+            layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+            layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityobjectname',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityindicatorbar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilitybar',false)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
             pos_x = pos_x + gap_x
             col_num = col_num + 1
             SetProgress(progHandle, obj_num)
@@ -102,16 +102,16 @@ function pos_layout_align_timing_macros(last_obj, timing_macros_amount_lay,first
     obj_count = #delayfrom_macros -- amout of objects to be aligned
     last_pool_obj = pool_obj_num + obj_count - 1 -- last object of the pool to be aligned
     x_count = #delayfrom_macros -- number of columns
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
         while col_num <= x_count do
-            layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-            layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityobjectname',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityindicatorbar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilitybar',false)
-            layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-            layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+            layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+            layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityobjectname',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityindicatorbar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilitybar',false)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
             pos_x = pos_x + gap_x
             col_num = col_num + 1
             SetProgress(progHandle, obj_num)
@@ -126,16 +126,16 @@ function pos_layout_align_timing_macros(last_obj, timing_macros_amount_lay,first
     obj_count = #delayto_macros -- amout of objects to be aligned
     last_pool_obj = pool_obj_num + obj_count - 1 -- last object of the pool to be aligned
     x_count = #delayto_macros -- number of columns
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
         while col_num <= x_count do
-            layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-            layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityobjectname',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityindicatorbar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilitybar',false)
-            layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-            layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+            layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+            layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityobjectname',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityindicatorbar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilitybar',false)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
             pos_x = pos_x + gap_x
             col_num = col_num + 1
             SetProgress(progHandle, obj_num)
@@ -151,16 +151,16 @@ function pos_layout_align_timing_macros(last_obj, timing_macros_amount_lay,first
     obj_count = #xgroup_macros -- amout of objects to be aligned
     last_pool_obj = pool_obj_num + obj_count - 1 -- last object of the pool to be aligned
     x_count = #xgroup_macros -- number of columns
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
         while col_num <= x_count do
-            layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-            layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityobjectname',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityindicatorbar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilitybar',false)
-            layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-            layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+            layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+            layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityobjectname',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityindicatorbar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilitybar',false)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
             pos_x = pos_x + gap_x
             col_num = col_num + 1
             SetProgress(progHandle, obj_num)
@@ -175,16 +175,16 @@ function pos_layout_align_timing_macros(last_obj, timing_macros_amount_lay,first
     obj_count = #xwings_macros -- amout of objects to be aligned
     last_pool_obj = pool_obj_num + obj_count - 1 -- last object of the pool to be aligned
     x_count = #xwings_macros -- number of columns
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
         while col_num <= x_count do
-            layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-            layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityobjectname',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityindicatorbar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilitybar',false)
-            layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-            layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+            layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+            layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityobjectname',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityindicatorbar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilitybar',false)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
             pos_x = pos_x + gap_x
             col_num = col_num + 1
             SetProgress(progHandle, obj_num)

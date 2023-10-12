@@ -14,18 +14,18 @@ function pos_layout_align_matrx(last_obj, size_x, size_y,gap_x,gap_y,start_pos_x
     local last_pool_obj = pool_obj_num + obj_count - 1 -- last object of the pool to be aligned
     local x_count = number_of_presets -- number of columns
     local y_count = amount_of_groups -- number pf rows
-    local color_layout = pos_layout -- layout in the layout pool
+    local pos_layout = pos_layout -- layout in the layout pool
     local layout_pool = ShowData().datapools[DP].Layouts
     -- define the range of the progress bar:
 	SetProgressRange(progHandle, line_num, y_count)
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
     while line_num <= y_count do
-        layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-        layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-        layout_pool[color_layout][obj_num]:Set('VisibilityID',false)
-        layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-        layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-        layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+        layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+        layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+        layout_pool[pos_layout][obj_num]:Set('VisibilityID',false)
+        layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+        layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+        layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
         obj_num = obj_num + 1
         SetProgress(progHandle, line_num)
         coroutine.yield(progress_bar_time)

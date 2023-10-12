@@ -7,15 +7,15 @@ function pos_layout_align_off_macro(last_obj,size_x,size_y,gap_x,gap_y,start_pos
     local object_type = 'macro'
     local obj_num = last_obj -- number of the object assigned to layout
     local pool_obj_num = last_macro -- pool number of the first object
-    local color_layout = pos_layout -- layout in the layout pool
+    local pos_layout = pos_layout -- layout in the layout pool
     local layout_pool = ShowData().datapools[DP].Layouts
-    c('assign '..object_type..' '..pool_obj_num..' at layout '..color_layout..' /nu')
-    layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-    layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-    layout_pool[color_layout][obj_num]:Set('VisibilityBar',true)
-    layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x*2)
-    layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y*2)
-    layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+    c('assign '..object_type..' '..pool_obj_num..' at layout '..pos_layout..' /nu')
+    layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+    layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+    layout_pool[pos_layout][obj_num]:Set('VisibilityBar',true)
+    layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x*2)
+    layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y*2)
+    layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
     obj_num = obj_num + 1
     return (obj_num)
 end

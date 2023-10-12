@@ -14,30 +14,30 @@ function pos_favourites_layout_align(last_obj, last_macro, size_x, size_y,gap_x,
     local last_pool_obj = pool_obj_num + obj_count - 1 -- last object of the pool to be aligned
     local x_count = 4 -- number of columns
     local y_count = 4 -- number of rows
-    local color_layout = pos_layout -- layout in the layout pool
+    local pos_layout = pos_layout -- layout in the layout pool
     local layout_pool = ShowData().datapools[DP].Layouts
     -- define the range of the progress bar:
 	SetProgressRange(progHandle, col_num, x_count)
-    c('assign '..object_type..' '..pool_obj_num..' at layout '..color_layout..' /nu')
-    layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x+gap_x)
-    layout_pool[color_layout][obj_num]:Set('posy',pos_y-gap_y*4.5)
-    layout_pool[color_layout][obj_num]:Set('VisibilityBar',false)
-    layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-    layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y*2)
-    layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+    c('assign '..object_type..' '..pool_obj_num..' at layout '..pos_layout..' /nu')
+    layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x+gap_x)
+    layout_pool[pos_layout][obj_num]:Set('posy',pos_y-gap_y*4.5)
+    layout_pool[pos_layout][obj_num]:Set('VisibilityBar',false)
+    layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+    layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y*2)
+    layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
     obj_num = obj_num + 1
     pool_obj_num = pool_obj_num + 1
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
     while line_num <= y_count do
         while col_num <= x_count do
-            layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-            layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-            layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-            layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-            layout_pool[color_layout][obj_num]:Set('VisibilityBar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityindicatorbar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityobjectname',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+            layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+            layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+            layout_pool[pos_layout][obj_num]:Set('VisibilityBar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityindicatorbar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityobjectname',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
             pos_x = pos_x + gap_x
             SetProgress(progHandle, col_num)
             coroutine.yield(progress_bar_time)

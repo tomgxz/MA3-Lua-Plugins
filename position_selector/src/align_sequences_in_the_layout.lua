@@ -1,7 +1,7 @@
 local c = Cmd
 local ti = TextInput
 
-function pos_sequences_layout_align(x_count, y_count, size_x, size_y, gap_x, gap_y, start_pos_x, start_pos_y, pool_obj_num, color_layout,progress_bar_time,DP)
+function pos_sequences_layout_align(x_count, y_count, size_x, size_y, gap_x, gap_y, start_pos_x, start_pos_y, pool_obj_num, pos_layout,progress_bar_time,DP)
     --[[
         Function to place objects in layouts
     ]]--
@@ -18,18 +18,18 @@ function pos_sequences_layout_align(x_count, y_count, size_x, size_y, gap_x, gap
     local layout_pool = ShowData().datapools[DP].Layouts
     -- define the range of the progress bar:
 	SetProgressRange(progHandle, 1, obj_count)
-    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..color_layout..' /nu')
+    c('assign '..object_type..' '..pool_obj_num..' thru '..last_pool_obj..' at layout '..pos_layout..' /nu')
     while line_num <= y_count do
         while col_num <= x_count do
-            layout_pool[color_layout][obj_num]:Set('posx',65536+pos_x)
-            layout_pool[color_layout][obj_num]:Set('posy',pos_y)
-            layout_pool[color_layout][obj_num]:Set('action',14)
-            layout_pool[color_layout][obj_num]:Set('visibilityobjectname',false)
-            layout_pool[color_layout][obj_num]:Set('visibilityindicatorbar',false)
-            layout_pool[color_layout][obj_num]:Set('visibilitybar',false)
-            layout_pool[color_layout][obj_num]:Set('POSITIONH',size_x)
-            layout_pool[color_layout][obj_num]:Set('POSITIONW',size_y)
-            layout_pool[color_layout][obj_num]:Set('visibilityborder',false)
+            layout_pool[pos_layout][obj_num]:Set('posx',65536+pos_x)
+            layout_pool[pos_layout][obj_num]:Set('posy',pos_y)
+            layout_pool[pos_layout][obj_num]:Set('action',14)
+            layout_pool[pos_layout][obj_num]:Set('visibilityobjectname',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilityindicatorbar',false)
+            layout_pool[pos_layout][obj_num]:Set('visibilitybar',false)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONH',size_x)
+            layout_pool[pos_layout][obj_num]:Set('POSITIONW',size_y)
+            layout_pool[pos_layout][obj_num]:Set('visibilityborder',false)
             pos_x = pos_x + gap_x
             col_num = col_num + 1
             SetProgress(progHandle, obj_num)
